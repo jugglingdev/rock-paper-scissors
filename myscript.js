@@ -9,7 +9,9 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let roundNumber = 0; roundNumber < 5; roundNumber++) {
+    for (let roundNumber = 1; roundNumber < 6; roundNumber++) {
+
+        console.log("Round: " + roundNumber);
 
         // Function to getPlayerChoice of rock, paper, or scissors
 
@@ -67,7 +69,9 @@ function game() {
 
         function keepPlayerScore() {
             
-            if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
+            if ((playerSelection == "rock" && computerSelection == "scissors") ||       
+                (playerSelection == "paper" && computerSelection == "rock") || 
+                (playerSelection == "scissors" && computerSelection == "paper")) {
                 playerScore += 1;
                 return playerScore;
             }
@@ -76,7 +80,9 @@ function game() {
             
         function keepComputerScore() {
             
-            if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
+            if ((playerSelection == "rock" && computerSelection == "paper") || 
+                (playerSelection == "paper" && computerSelection == "scissors") || 
+                (playerSelection == "scissors" && computerSelection == "rock")) {
                 computerScore += 1;
                 return computerScore;
             } 
