@@ -19,8 +19,6 @@ This is a solution to the [Project: Rock Paper Scissors of the Foundations Cours
 
 ### Screenshot
 
-*To be added*
-
 ![Rock Paper Scissors screenshot](./rock-paper-scissors-screenshot.png)
 
 ### Links
