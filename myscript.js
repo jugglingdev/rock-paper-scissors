@@ -4,6 +4,8 @@
 
 // Use prompt() to get input from the user
 
+const button = document.querySelector('button');
+
 function game() {
 
     let playerScore = 0;
@@ -115,4 +117,4 @@ function game() {
     console.log(announceWinner());
 }
 
-game();
+button.addEventListener('click', game);
