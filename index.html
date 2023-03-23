@@ -3,18 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Rock, Paper, Scissors</title>
 
     <script src="myscript.js" defer></script>
 </head>
 <body>
-    <h1>Rock, Paper, Scissors!</h1>
-    <p>This game is played in the console.  To access the console:</p>
-    <ol>
-        <li>Right click anywhere on this page</li>
-        <li>Click "Inspect" in the dropdown menu</li>
-        <li>Click "Console" in the navigation menu of the Web Inspector</li>
-    </ol>
-    <p>When the console is ready, <button id="btn">CLICK HERE</button> to get started.</p>
+    <header>
+        <img src="./images/cartoon-rock-paper-scissors-vector-characters.svg" alt="cartoon rock, paper, and scissors">
+    </header>
+
+    <div class="instructions">
+    <section class="instructions">
+        <h1>Welcome!</h1>
+        <p>In this classic game, you'll select <strong>rock</strong>, <strong>paper</strong>, or <strong>scissors</strong> to try to beat the computer.  Remember:</p>
+        <ul>
+            <li>Rock crushes scissors</li>
+            <li>Paper covers rock</li>
+            <li>Scissors cuts paper</li>
+        </ul>
+        <p>If your guess beats the computer, you get a point.  If the computer beats you, it gets a point.  If there's a tie, no one gets a point.</p>
+        <p>First one to 5 points wins.</p>
+        <p>Ready to play?</p>
+        <button id="btn">LET'S GO!</button>
+    </section>
+    </div>
+
+    <section class="gamePlay">
+        <div class="results"></div>
+        <p>Make your choice!</p>
+
+        <div class="button-container">
+            <button class="rock">ROCK</button>
+            <button class="paper">PAPER</button>
+            <button class="scissors">SCISSORS</button>
+        </div>
+    </section>
+
+    <div class="footer">
+    <footer>
+        <p>Thanks for playing!</p>
+        <p><a href="https://www.vecteezy.com/free-vector/rock-paper-scissors">Rock Paper Scissors Vectors by Vecteezy</a></p>
+        <p>Copyright &copy; jugglingdev 2023</p>
+    </footer>
+    </div>
 </body>
 </html>
