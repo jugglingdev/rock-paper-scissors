@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Fira Sans Condensed', sans-serif;
     color: #333;
@@ -39,7 +43,7 @@ section.instructions {
     align-items: flex-start;
 
     margin: 0 auto;
-    padding: 42px 50px;
+    padding: 110px 50px;
     width: 700px;
 
     font-size: 20px;
@@ -48,15 +52,15 @@ section.instructions {
 
 h1 {
     align-self: center;
-    padding-bottom: 22px;
+    padding-bottom: 30px;
 }
 
 p {
     padding-bottom: 12px;
 }
 
-p:last-of-type {
-    padding-bottom: 20px;
+.instructions > p:last-of-type {
+    padding-bottom: 30px;
 }
 
 ul {
@@ -93,13 +97,42 @@ button {
         );
 }
 
+button a:link {
+    color: #333;
+    text-decoration: none;
+}
+
+button a:hover {
+    color: #333;
+}
+
+button a:active {
+    color: #333;
+}
+
+button a:visited {
+    color: #333;
+}
+
+.gamePlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin: 0 auto;
+    padding: 110px 50px;
+    width: 700px;
+}
+
+.results {
+    margin: 0 auto;
+    height: 300px;
+}
+
 .button-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
-    padding: 42px 50px;
-    width: 700px;
 }
 
 .rock {
@@ -140,13 +173,35 @@ button {
 
 .footer {
     margin: 0 auto;
-    width: 100%
-    /* background-color: #e0e1e2; */
+    width: 100%;
+    background-color: #e0e1e2;
 }
 
 footer {
-    width: 700px;
     margin: 0 auto;
-    padding: 32px 0px;
+    padding: 30px 50px 18px 50px;
+    width: 700px;
+
+    font-size: 16px;
+    line-height: 1.5em;
     text-align: center;
 }
+
+footer a:link {
+    color: hsl(187, 97%, 28%);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: hsl(187, 97%, 40%);
+    text-decoration: underline;
+}
+
+footer a:active {
+    color: #fbbc00;
+}
+
+footer a:visited {
+    color: hsl(329, 100%, 55%);
+}
+
