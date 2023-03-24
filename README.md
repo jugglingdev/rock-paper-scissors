@@ -46,9 +46,11 @@ The game was originally coded to be played in the console.  Later, I added a col
 
 For the UI, I had a lot of fun learning how to do beautiful color gradients that don't grey out in the middle.  I found a super useful tool for this task that is linked below.
 
-I also brought back some CSS skills like `flexbox`, `pseudo-classes`, favicons, and relative links.
+I also brought back some CSS skills like `flexbox`, `pseudo-classes`, favicons, relative links, and even relative positioning for the nifty scoreboard.
 
-A new CSS property I learned was `scroll-behavior: smooth`.  It's perfect for when the user clicks the relative links to scroll down and start the game.  
+A new CSS property I learned was `scroll-behavior: smooth`.  It's perfect for when the user clicks the relative links to scroll down and start the game.  I also used `cursor: pointer` for the second time since the rock, paper, and scissors buttons aren't links that automatically switch the cursor to the pointer style.
+
+You know how some websites just have all these little hidden gems?  Well, since I learned how to `transition` buttons in CSS, I decided to make the `USER` and `COMP` labels as buttons so they could transition on a hover, even though they don't interact with the JavaScript or link anywhere.  It's just one of those sweet things to make the player smile.
 
 ### Continued development
 

@@ -29,6 +29,19 @@ scissors.addEventListener('click', function() {
 
 // Function to play a single round and declare winner of round
 
+let roundOutcome = "";
+
+let announce = document.querySelector('div.announcement');
+
+let roundAnnounce = document.createElement('p');
+roundAnnounce.classList.add('announcement');
+roundAnnounce.textContent = "Click to begin";
+    roundAnnounce.setAttribute('style', 'text-align: center; font-size: 36px');
+
+announce.appendChild(roundAnnounce);
+
+
+
 function playRound() {
 
     function getComputerChoice() {
@@ -39,8 +52,6 @@ function playRound() {
     };
 
     getComputerChoice();
-
-    let roundOutcome = "";
 
     if (playerSelection == "rock" && computerSelection == "paper") {
         roundOutcome = "Oh, no!  Paper beats rock.";
@@ -60,7 +71,7 @@ function playRound() {
         roundOutcome = "Something went wrong...";
     };
 
-    console.log(roundOutcome);
+    roundAnnounce.textContent = roundOutcome;
     return roundOutcome;    
 }
 
@@ -74,6 +85,17 @@ scissors.addEventListener('click', playRound);
 let playerScore = 0;
 let computerScore = 0;
 
+let scores = document.querySelector('div.scores');
+
+let scoreboard = document.createElement('p');
+scoreboard.classList.add('score');
+scoreboard.textContent = playerScore + ' : ' + computerScore;
+    scoreboard.setAttribute('style', 'text-align: center; font-size: 55px')
+
+scores.appendChild(scoreboard);
+
+
+
 function keepScore() {
     
     function keepPlayerScore () {
@@ -81,10 +103,10 @@ function keepScore() {
             (playerSelection == "paper" && computerSelection == "rock") || 
             (playerSelection == "scissors" && computerSelection == "paper")) {
             playerScore += 1;
-            console.log("Your score: " + playerScore);
+            scoreboard.textContent = playerScore + ' : ' + computerScore;
             return playerScore;
         } else {
-        console.log("Your score: " + playerScore);
+        scoreboard.textContent = playerScore + ' : ' + computerScore;
         return playerScore;
         }
     };
@@ -96,10 +118,10 @@ function keepScore() {
             (playerSelection == "scissors" && computerSelection == "rock") || 
             (playerSelection == "rock" && computerSelection == "paper")) {
             computerScore += 1;
-            console.log("Computer score: " + computerScore);
+            scoreboard.textContent = playerScore + ' : ' + computerScore;
             return computerScore;
         } else {
-        console.log("Computer score: " + computerScore);
+        scoreboard.textContent = playerScore + ' : ' + computerScore;
         return computerScore;
         }
     };
@@ -123,8 +145,22 @@ function keepScore() {
 
 }
 
+
+
 rock.addEventListener('click', keepScore);
 paper.addEventListener('click', keepScore);
 scissors.addEventListener('click', keepScore);
 
+
+
+/*
+const scores = document.querySelector('div.scores');
+
+let scoreboard = document.createElement('p');
+scoreboard.classList.add('score');
+scoreboard.textContent = playerScore + ' : ' + computerScore;
+    scoreboard.setAttribute('style', 'text-align: center; font-size: 55px')
+
+scores.appendChild(scoreboard);
+*/
 

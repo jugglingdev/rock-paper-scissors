@@ -55,7 +55,7 @@ h1 {
     padding-bottom: 30px;
 }
 
-p {
+.instruction > p {
     padding-bottom: 12px;
 }
 
@@ -78,23 +78,37 @@ button {
     font-size: 22px;
     border-radius: 0.5em;
     border: 2px solid #333;
+
+    background-size: 250% 100%;
+    transition: all .4s ease-in-out;
+}
+
+button:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
 }
 
 .instructions > button {
     align-self: center;
     background-image: linear-gradient(
         90deg,
-        hsl(329deg 100% 66%) 0%,
-        hsl(315deg 79% 67%) 11%,
-        hsl(290deg 69% 69%) 22%,
-        hsl(261deg 93% 77%) 33%,
-        hsl(232deg 100% 78%) 44%,
-        hsl(213deg 100% 69%) 56%,
-        hsl(201deg 100% 59%) 67%,
-        hsl(195deg 100% 50%) 78%,
-        hsl(191deg 100% 48%) 89%,
-        hsl(187deg 97% 45%) 100%
-        );
+        hsl(45deg 100% 49%) 0%,
+        hsl(45deg 99% 54%) 7%,
+        hsl(45deg 98% 59%) 13%,
+        hsl(45deg 97% 64%) 20%,
+        hsl(45deg 96% 68%) 27%,
+        hsl(45deg 94% 73%) 33%,
+        hsl(45deg 93% 78%) 40%,
+        hsl(45deg 93% 83%) 47%,
+        hsl(45deg 93% 83%) 53%,
+        hsl(45deg 93% 78%) 60%,
+        hsl(45deg 94% 73%) 67%,
+        hsl(45deg 96% 68%) 73%,
+        hsl(45deg 97% 64%) 80%,
+        hsl(45deg 98% 59%) 87%,
+        hsl(45deg 99% 54%) 93%,
+        hsl(45deg 100% 49%) 100%
+      );
 }
 
 button a:link {
@@ -126,7 +140,99 @@ button a:visited {
 
 .results {
     margin: 0 auto;
-    height: 300px;
+    padding-bottom: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.user {
+    position: relative;
+    z-index: 1;
+    left: 45px;
+
+    border: 2px solid #333;
+    border-radius: 0.5em;
+    width: 90px;
+    padding: 6px 8px;
+
+    background-image: linear-gradient(
+        90deg,
+        hsl(329deg 100% 66%) 0%,
+        hsl(329deg 99% 69%) 7%,
+        hsl(329deg 99% 72%) 13%,
+        hsl(329deg 97% 74%) 20%,
+        hsl(329deg 97% 77%) 27%,
+        hsl(329deg 96% 80%) 33%,
+        hsl(329deg 95% 83%) 40%,
+        hsl(329deg 95% 85%) 47%,
+        hsl(329deg 95% 85%) 53%,
+        hsl(329deg 95% 83%) 60%,
+        hsl(329deg 96% 80%) 67%,
+        hsl(329deg 97% 77%) 73%,
+        hsl(329deg 97% 74%) 80%,
+        hsl(329deg 99% 72%) 87%,
+        hsl(329deg 99% 69%) 93%,
+        hsl(329deg 100% 66%) 100%
+      );
+}
+
+.scores {
+    width: 300px;
+    border: 2px solid #333;
+    border-radius: 0.5em;
+    padding: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comp {
+    position: relative;
+    z-index: 1;
+    right: 45px;
+
+    border: 2px solid #333;
+    border-radius: 0.5em;
+    width: 90px;
+    padding: 6px 8px;
+
+    background-image: linear-gradient(
+        90deg,
+        hsl(187deg 97% 45%) 0%,
+        hsl(187deg 94% 51%) 7%,
+        hsl(187deg 91% 56%) 13%,
+        hsl(187deg 89% 61%) 20%,
+        hsl(187deg 86% 66%) 27%,
+        hsl(187deg 83% 72%) 33%,
+        hsl(188deg 81% 77%) 40%,
+        hsl(187deg 78% 82%) 47%,
+        hsl(187deg 78% 82%) 53%,
+        hsl(188deg 81% 77%) 60%,
+        hsl(187deg 83% 72%) 67%,
+        hsl(187deg 86% 66%) 73%,
+        hsl(187deg 89% 61%) 80%,
+        hsl(187deg 91% 56%) 87%,
+        hsl(187deg 94% 51%) 93%,
+        hsl(187deg 97% 45%) 100%
+      );
+}
+
+.announcement {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button-container {
@@ -136,39 +242,77 @@ button a:visited {
 }
 
 .rock {
+    cursor: pointer;
     background-image: linear-gradient(
         90deg,
         hsl(329deg 100% 66%) 0%,
-        hsl(329deg 99% 70%) 20%,
-        hsl(329deg 97% 74%) 40%,
-        hsl(330deg 96% 79%) 60%,
-        hsl(329deg 95% 83%) 80%,
-        hsl(330deg 94% 87%) 100%
-    );
+        hsl(329deg 99% 69%) 7%,
+        hsl(329deg 99% 72%) 13%,
+        hsl(329deg 97% 74%) 20%,
+        hsl(329deg 97% 77%) 27%,
+        hsl(329deg 96% 80%) 33%,
+        hsl(329deg 95% 83%) 40%,
+        hsl(329deg 95% 85%) 47%,
+        hsl(329deg 95% 85%) 53%,
+        hsl(329deg 95% 83%) 60%,
+        hsl(329deg 96% 80%) 67%,
+        hsl(329deg 97% 77%) 73%,
+        hsl(329deg 97% 74%) 80%,
+        hsl(329deg 99% 72%) 87%,
+        hsl(329deg 99% 69%) 93%,
+        hsl(329deg 100% 66%) 100%
+      );
 }
 
 .paper {
+    cursor: pointer;
     background-image: linear-gradient(
         90deg,
         hsl(45deg 100% 49%) 0%,
-        hsl(45deg 98% 56%) 20%,
-        hsl(45deg 97% 64%) 40%,
-        hsl(45deg 95% 71%) 60%,
-        hsl(45deg 93% 78%) 80%,
-        hsl(45deg 92% 85%) 100%
-    );
+        hsl(45deg 99% 54%) 7%,
+        hsl(45deg 98% 59%) 13%,
+        hsl(45deg 97% 64%) 20%,
+        hsl(45deg 96% 68%) 27%,
+        hsl(45deg 94% 73%) 33%,
+        hsl(45deg 93% 78%) 40%,
+        hsl(45deg 93% 83%) 47%,
+        hsl(45deg 93% 83%) 53%,
+        hsl(45deg 93% 78%) 60%,
+        hsl(45deg 94% 73%) 67%,
+        hsl(45deg 96% 68%) 73%,
+        hsl(45deg 97% 64%) 80%,
+        hsl(45deg 98% 59%) 87%,
+        hsl(45deg 99% 54%) 93%,
+        hsl(45deg 100% 49%) 100%
+      );
 }
 
 .scissors {
+    cursor: pointer;
     background-image: linear-gradient(
         90deg,
         hsl(187deg 97% 45%) 0%,
-        hsl(187deg 92% 53%) 20%,
-        hsl(187deg 89% 61%) 40%,
-        hsl(187deg 85% 69%) 60%,
-        hsl(188deg 81% 77%) 80%,
-        hsl(187deg 77% 85%) 100%
-    );
+        hsl(187deg 94% 51%) 7%,
+        hsl(187deg 91% 56%) 13%,
+        hsl(187deg 89% 61%) 20%,
+        hsl(187deg 86% 66%) 27%,
+        hsl(187deg 83% 72%) 33%,
+        hsl(188deg 81% 77%) 40%,
+        hsl(187deg 78% 82%) 47%,
+        hsl(187deg 78% 82%) 53%,
+        hsl(188deg 81% 77%) 60%,
+        hsl(187deg 83% 72%) 67%,
+        hsl(187deg 86% 66%) 73%,
+        hsl(187deg 89% 61%) 80%,
+        hsl(187deg 91% 56%) 87%,
+        hsl(187deg 94% 51%) 93%,
+        hsl(187deg 97% 45%) 100%
+      );
+}
+
+.gamePlay > h1 {
+    padding-top: 40px;
+    padding-bottom: 0;
 }
 
 .footer {
@@ -179,7 +323,7 @@ button a:visited {
 
 footer {
     margin: 0 auto;
-    padding: 30px 50px 18px 50px;
+    padding: 35px 50px 35px 50px;
     width: 700px;
 
     font-size: 16px;
