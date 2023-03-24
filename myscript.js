@@ -126,3 +126,5 @@ function keepScore() {
 rock.addEventListener('click', keepScore);
 paper.addEventListener('click', keepScore);
 scissors.addEventListener('click', keepScore);
+
+
