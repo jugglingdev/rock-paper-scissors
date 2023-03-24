@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="./images/site.webmanifest">
+
     <title>Rock, Paper, Scissors</title>
 
     <script src="myscript.js" defer></script>
@@ -26,13 +32,16 @@
         <p>If your guess beats the computer, you get a point.  If the computer beats you, it gets a point.  If there's a tie, no one gets a point.</p>
         <p>First one to 5 points wins.</p>
         <p>Ready to play?</p>
-        <button id="btn">LET'S GO!</button>
+        <button id="begin"><a href="#gamePlay">LET'S GO!</a></button>
     </section>
     </div>
 
-    <section class="gamePlay">
-        <div class="results"></div>
-        <p>Make your choice!</p>
+    <section class="gamePlay" id="gamePlay">
+        <h1>Make your choice!</h1>
+        <div class="results">
+
+        </div>
+
 
         <div class="button-container">
             <button class="rock">ROCK</button>
@@ -44,8 +53,8 @@
     <div class="footer">
     <footer>
         <p>Thanks for playing!</p>
-        <p><a href="https://www.vecteezy.com/free-vector/rock-paper-scissors">Rock Paper Scissors Vectors by Vecteezy</a></p>
-        <p>Copyright &copy; jugglingdev 2023</p>
+        <p>Shout out to <a href="https://www.vecteezy.com/free-vector/rock-paper-scissors">Vecteezy</a> for the Rock Paper Scissors cartoon</p>
+        <p>Copyright &copy; <a href="https://github.com/jugglingdev">jugglingdev</a>  2023</p>
     </footer>
     </div>
 </body>
