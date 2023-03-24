@@ -128,6 +128,17 @@ button a:visited {
     color: #333;
 }
 
+.confetti {
+    width: 100%;
+    position: absolute;
+    bottom: -1000px;
+
+    user-select: none;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+ }
+
 .gamePlay {
     display: flex;
     flex-direction: column;
@@ -326,7 +337,7 @@ footer {
     padding: 35px 50px 35px 50px;
     width: 700px;
 
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5em;
     text-align: center;
 }
@@ -349,3 +360,10 @@ footer a:visited {
     color: hsl(329, 100%, 55%);
 }
 
+footer p:first-of-type {
+    padding-bottom: 12px;
+}
+
+footer p:last-of-type {
+    padding-top: 12px;
+}
