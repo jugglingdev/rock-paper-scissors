@@ -19,8 +19,6 @@ This is a solution to the [Project: Rock Paper Scissors of the Foundations Cours
 
 ### Screenshot
 
-*To be added*
-
 ![Rock Paper Scissors screenshot](./rock-paper-scissors-screenshot.png)
 
 ### Links
@@ -32,7 +30,11 @@ This is a solution to the [Project: Rock Paper Scissors of the Foundations Cours
 
 ### Built with
 
+- Semantic HTML
+- Custom CSS
 - JavaScript
+- Google Fonts
+- Vecteezy Vectors
 
 ### What I learned
 
@@ -40,11 +42,17 @@ Wow!  Being only a week or so into JavaScript, this project took longer than exp
 
 The biggest thing that helped me do this was breaking down the project into smaller bits.  Once I got a particular function working, I would then move on to the next.  There were some times where I had to go back and tweak a previous function, but this method still helped me stay focused and make steady progress.
 
-As of now, the game is currently played in the console.
+The game was originally coded to be played in the console.  Later, I added a colorful UI to build upon my HTML and CSS skills for a fun user experience.  This required refactoring the JavaScript, which was tough but good practice.
+
+For the UI, I had a lot of fun learning how to do beautiful color gradients that don't grey out in the middle.  I found a super useful tool for this task that is linked below.
+
+I also brought back some CSS skills like `flexbox`, `pseudo-classes`, favicons, and relative links.
+
+A new CSS property I learned was `scroll-behavior: smooth`.  It's perfect for when the user clicks the relative links to scroll down and start the game.  
 
 ### Continued development
 
-This project will be revisited and dressed up with HTML and CSS in the near future.
+The biggest challenge with this project was figuring out the JavaScript.  I hear so many developers urge coding newbies to work on their logic and I definitely see why!  This is by far the skill I would most like to work on.  In the future, I will seek opportunities to read other developers' code so I can learn how to keep everything clean and tidy.
 
 ### Useful resources
 
@@ -55,6 +63,10 @@ This project will be revisited and dressed up with HTML and CSS in the near futu
 - [MDN Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) - Good resource for double checking function syntax.
 
 - [MDN Loops and Iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration) - Good resource for understanding loops.
+
+- [Josh W. Comeau Gradient Generator](https://www.joshwcomeau.com/gradient-generator/) - Massive kudos to Josh for his helpful and generous content.  I'm super impressed with his front-end skills as well as the quality of his educational material.  Can't give thanks enough.
+
+- [Favicon.io](https://favicon.io/) - Generate favicons from text, image, or emojis.
 
 ## Author
 
@@ -68,4 +80,6 @@ This project will be revisited and dressed up with HTML and CSS in the near futu
 
 ## Acknowledgments
 
-Shoutout to everyone at The Odin Project for chipping in to make web development education free and accessible for everyone.  Huge thanks to you all!
+Thank you to [Vecteezy](https://www.vecteezy.com/free-vector/rock-paper-scissors) for the playful rock, paper, scissors cartoon featured in this project.
+
+As always, shout out to everyone at The Odin Project for chipping in to make web development education free and accessible for everyone.  Huge thanks to you all!
