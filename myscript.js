@@ -34,12 +34,11 @@ let roundOutcome = "";
 let announce = document.querySelector('div.announcement');
 
 let roundAnnounce = document.createElement('p');
-roundAnnounce.classList.add('announcement');
+roundAnnounce.classList.add('announce');
 roundAnnounce.textContent = "Click to begin";
     roundAnnounce.setAttribute('style', 'text-align: center; font-size: 36px');
 
 announce.appendChild(roundAnnounce);
-
 
 
 function playRound() {
@@ -80,8 +79,8 @@ paper.addEventListener('click', playRound);
 scissors.addEventListener('click', playRound);
 
 
+// Confetti Canvas
 
-// CONFETTI CANVAS
 //-----------Var Inits--------------
 canvas = document.getElementById("canvas");
 ctx = canvas.getContext("2d");
@@ -131,8 +130,6 @@ let initConfetti = () => {
       velocity: {
         x: randomRange(-25, 25),
         y: randomRange(0, -50) } });
-
-
   }
 };
 
@@ -210,7 +207,6 @@ scoreboard.textContent = playerScore + ' : ' + computerScore;
 
 scores.appendChild(scoreboard);
 
-
 let gameResult = "";
 
 function keepScore() {
@@ -261,9 +257,41 @@ function keepScore() {
     };
 
     announceWinner();
+    resetGame();
 }
 
 rock.addEventListener('click', keepScore);
 paper.addEventListener('click', keepScore);
 scissors.addEventListener('click', keepScore);
 
+// Fade text transition
+
+function textTransition() {
+    announce.classList.remove('fade');
+    setTimeout(() => {
+        requestAnimationFrame(() => {
+            announce.classList.add('fade');
+        });
+    }, 225);
+}
+
+rock.addEventListener('click', textTransition);
+paper.addEventListener('click', textTransition);
+scissors.addEventListener('click', textTransition);
+
+// Function to resetGame() after winner is declared
+
+function resetGame() {
+    if (gameResult == "Congrats!  You won the game!" || gameResult == "Bummer!  You lost the game.") {
+        playerScore = 0;
+        computerScore = 0;
+        gameResult = "";
+
+        setTimeout(() => {
+            textTransition();
+            roundAnnounce.textContent = "Click to play again";
+            console.log("Play again!");
+            return roundAnnounce;
+        }, 3000);
+    }
+};

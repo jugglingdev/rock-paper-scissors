@@ -35,6 +35,7 @@ This is a solution to the [Project: Rock Paper Scissors of the Foundations Cours
 - JavaScript
 - Google Fonts
 - Vecteezy Vectors
+- CodeHim Confetti Canvas
 
 ### What I learned
 
