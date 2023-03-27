@@ -1,0 +1,437 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: #333;
+    background-color: #fcfcfc;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+}
+
+img {
+    width: 700px;
+}
+
+div.instructions {
+    margin: 0 auto;
+    width: 100%;
+    background-color: #e0e1e2;
+}
+
+section.instructions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 0 auto;
+    padding: 110px 50px;
+    width: 700px;
+
+    font-size: 20px;
+    line-height: 1.5em;
+}
+
+h1 {
+    align-self: center;
+    padding-bottom: 50px;
+    font-size: 40px;
+}
+
+.instructions > p {
+    padding-bottom: 20px;
+}
+
+.instructions > p:last-of-type {
+    padding-bottom: 50px;
+}
+
+ul {
+    padding-left: 20px; 
+    padding-bottom: 15px;
+
+    list-style-type: circle;
+}
+
+button {
+    padding: 8px 18px;
+    width: 160px;
+    z-index: 2;
+
+    font-weight: bold;
+    font-size: 22px;
+    border-radius: 0.5em;
+    border: 2px solid #333;
+
+    background-size: 250% 100%;
+    transition: all .4s ease-in-out;
+}
+
+button:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+}
+
+.instructions > button {
+    align-self: center;
+    background-image: linear-gradient(
+        90deg,
+        hsl(45deg 100% 49%) 0%,
+        hsl(45deg 99% 54%) 7%,
+        hsl(45deg 98% 59%) 13%,
+        hsl(45deg 97% 64%) 20%,
+        hsl(45deg 96% 68%) 27%,
+        hsl(45deg 94% 73%) 33%,
+        hsl(45deg 93% 78%) 40%,
+        hsl(45deg 93% 83%) 47%,
+        hsl(45deg 93% 83%) 53%,
+        hsl(45deg 93% 78%) 60%,
+        hsl(45deg 94% 73%) 67%,
+        hsl(45deg 96% 68%) 73%,
+        hsl(45deg 97% 64%) 80%,
+        hsl(45deg 98% 59%) 87%,
+        hsl(45deg 99% 54%) 93%,
+        hsl(45deg 100% 49%) 100%
+      );
+}
+
+button a:link {
+    color: #333;
+    text-decoration: none;
+}
+
+button a:hover {
+    color: #333;
+}
+
+button a:active {
+    color: #333;
+}
+
+button a:visited {
+    color: #333;
+}
+
+.confetti {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+    user-select: none;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+ }
+
+.gamePlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin: 0 auto;
+    padding: 110px 50px;
+    width: 700px;
+}
+
+.results {
+    margin: 0 auto;
+    padding-bottom: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.user {
+    position: relative;
+    z-index: 1;
+    left: 45px;
+
+    border: 2px solid #333;
+    border-radius: 0.5em;
+    width: 90px;
+    padding: 6px 8px;
+
+    background-image: linear-gradient(
+        90deg,
+        hsl(329deg 100% 66%) 0%,
+        hsl(329deg 99% 69%) 7%,
+        hsl(329deg 99% 72%) 13%,
+        hsl(329deg 97% 74%) 20%,
+        hsl(329deg 97% 77%) 27%,
+        hsl(329deg 96% 80%) 33%,
+        hsl(329deg 95% 83%) 40%,
+        hsl(329deg 95% 85%) 47%,
+        hsl(329deg 95% 85%) 53%,
+        hsl(329deg 95% 83%) 60%,
+        hsl(329deg 96% 80%) 67%,
+        hsl(329deg 97% 77%) 73%,
+        hsl(329deg 97% 74%) 80%,
+        hsl(329deg 99% 72%) 87%,
+        hsl(329deg 99% 69%) 93%,
+        hsl(329deg 100% 66%) 100%
+      );
+}
+
+.scores {
+    width: 300px;
+    border: 2px solid #333;
+    border-radius: 0.5em;
+    padding: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comp {
+    position: relative;
+    z-index: 1;
+    right: 45px;
+
+    border: 2px solid #333;
+    border-radius: 0.5em;
+    width: 90px;
+    padding: 6px 8px;
+
+    background-image: linear-gradient(
+        90deg,
+        hsl(187deg 97% 45%) 0%,
+        hsl(187deg 94% 51%) 7%,
+        hsl(187deg 91% 56%) 13%,
+        hsl(187deg 89% 61%) 20%,
+        hsl(187deg 86% 66%) 27%,
+        hsl(187deg 83% 72%) 33%,
+        hsl(188deg 81% 77%) 40%,
+        hsl(187deg 78% 82%) 47%,
+        hsl(187deg 78% 82%) 53%,
+        hsl(188deg 81% 77%) 60%,
+        hsl(187deg 83% 72%) 67%,
+        hsl(187deg 86% 66%) 73%,
+        hsl(187deg 89% 61%) 80%,
+        hsl(187deg 91% 56%) 87%,
+        hsl(187deg 94% 51%) 93%,
+        hsl(187deg 97% 45%) 100%
+      );
+}
+
+.announcement {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    text-align: center;
+    font-size: 36px;
+    opacity: 0;
+    transition: opacity 0ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade {
+    opacity: 1;
+    transition: opacity 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rock {
+    cursor: pointer;
+    background-image: linear-gradient(
+        90deg,
+        hsl(329deg 100% 66%) 0%,
+        hsl(329deg 99% 69%) 7%,
+        hsl(329deg 99% 72%) 13%,
+        hsl(329deg 97% 74%) 20%,
+        hsl(329deg 97% 77%) 27%,
+        hsl(329deg 96% 80%) 33%,
+        hsl(329deg 95% 83%) 40%,
+        hsl(329deg 95% 85%) 47%,
+        hsl(329deg 95% 85%) 53%,
+        hsl(329deg 95% 83%) 60%,
+        hsl(329deg 96% 80%) 67%,
+        hsl(329deg 97% 77%) 73%,
+        hsl(329deg 97% 74%) 80%,
+        hsl(329deg 99% 72%) 87%,
+        hsl(329deg 99% 69%) 93%,
+        hsl(329deg 100% 66%) 100%
+      );
+}
+
+.paper {
+    cursor: pointer;
+    background-image: linear-gradient(
+        90deg,
+        hsl(45deg 100% 49%) 0%,
+        hsl(45deg 99% 54%) 7%,
+        hsl(45deg 98% 59%) 13%,
+        hsl(45deg 97% 64%) 20%,
+        hsl(45deg 96% 68%) 27%,
+        hsl(45deg 94% 73%) 33%,
+        hsl(45deg 93% 78%) 40%,
+        hsl(45deg 93% 83%) 47%,
+        hsl(45deg 93% 83%) 53%,
+        hsl(45deg 93% 78%) 60%,
+        hsl(45deg 94% 73%) 67%,
+        hsl(45deg 96% 68%) 73%,
+        hsl(45deg 97% 64%) 80%,
+        hsl(45deg 98% 59%) 87%,
+        hsl(45deg 99% 54%) 93%,
+        hsl(45deg 100% 49%) 100%
+      );
+}
+
+.scissors {
+    cursor: pointer;
+    background-image: linear-gradient(
+        90deg,
+        hsl(187deg 97% 45%) 0%,
+        hsl(187deg 94% 51%) 7%,
+        hsl(187deg 91% 56%) 13%,
+        hsl(187deg 89% 61%) 20%,
+        hsl(187deg 86% 66%) 27%,
+        hsl(187deg 83% 72%) 33%,
+        hsl(188deg 81% 77%) 40%,
+        hsl(187deg 78% 82%) 47%,
+        hsl(187deg 78% 82%) 53%,
+        hsl(188deg 81% 77%) 60%,
+        hsl(187deg 83% 72%) 67%,
+        hsl(187deg 86% 66%) 73%,
+        hsl(187deg 89% 61%) 80%,
+        hsl(187deg 91% 56%) 87%,
+        hsl(187deg 94% 51%) 93%,
+        hsl(187deg 97% 45%) 100%
+      );
+}
+
+.gamePlay > h1 {
+    padding-top: 40px;
+    padding-bottom: 0;
+}
+
+.footer {
+    margin: 0 auto;
+    width: 100%;
+    background-color: #e0e1e2;
+}
+
+footer {
+    margin: 0 auto;
+    padding: 50px;
+    width: 700px;
+
+    font-size: 15px;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+footer a:link {
+    color: hsl(187, 97%, 28%);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: hsl(187, 97%, 40%);
+    text-decoration: underline;
+}
+
+footer a:active {
+    color: #fbbc00;
+}
+
+footer a:visited {
+    color: hsl(329, 100%, 55%);
+}
+
+footer p:first-of-type {
+    padding-bottom: 15px;
+}
+
+footer p:last-of-type {
+    padding-top: 15px;
+}
+
+@media only screen and (max-width: 425px) {
+    
+    body, header, img {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    section.instructions, .gamePlay, footer {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin: 0 auto;
+    }
+
+    .scoreboard {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+    }
+
+    .user {
+        width: 100px;
+        left: 0;
+    }
+
+    .comp {
+        width: 100px;
+        right: 0;
+        order: 2;
+    }
+
+    .scores {
+        width: 250px;
+        padding-left: 0;
+        padding-right: 0;
+        order: 3;
+    }
+
+    .announcement {
+        height: 80px;
+    }
+
+    button {
+        width: 300px;
+    }
+    
+    .button-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
