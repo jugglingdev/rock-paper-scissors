@@ -11,6 +11,7 @@ html {
 body {
     font-family: 'Fira Sans Condensed', sans-serif;
     color: #333;
+    background-color: #fcfcfc;
 
     display: flex;
     flex-direction: column;
@@ -52,15 +53,16 @@ section.instructions {
 
 h1 {
     align-self: center;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
+    font-size: 40px;
 }
 
 .instructions > p {
-    padding-bottom: 15px;
+    padding-bottom: 20px;
 }
 
 .instructions > p:last-of-type {
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 
 ul {
@@ -379,4 +381,57 @@ footer p:first-of-type {
 
 footer p:last-of-type {
     padding-top: 15px;
+}
+
+@media only screen and (max-width: 425px) {
+    
+    body, header, img {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    section.instructions, .gamePlay, footer {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin: 0 auto;
+    }
+
+    .scoreboard {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+    }
+
+    .user {
+        width: 100px;
+        left: 0;
+    }
+
+    .comp {
+        width: 100px;
+        right: 0;
+        order: 2;
+    }
+
+    .scores {
+        width: 250px;
+        padding-left: 0;
+        padding-right: 0;
+        order: 3;
+    }
+
+    .announcement {
+        height: 80px;
+    }
+
+    button {
+        width: 300px;
+    }
+    
+    .button-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 }
