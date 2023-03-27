@@ -287,11 +287,23 @@ function resetGame() {
         computerScore = 0;
         gameResult = "";
 
-        setTimeout(() => {
+        let clickPlayAgain = setTimeout(() => {
             textTransition();
             roundAnnounce.textContent = "Click to play again";
             console.log("Play again!");
             return roundAnnounce;
         }, 3000);
+
+        
+        function clearTO() {
+            if(clickPlayAgain) {
+                clearTimeout(clickPlayAgain);
+                return;
+            }
+        }
+
+        rock.addEventListener('click', clearTO);
+        paper.addEventListener('click', clearTO);
+        scissors.addEventListener('click', clearTO);
     }
 };
