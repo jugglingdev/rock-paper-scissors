@@ -19,6 +19,17 @@ body {
     align-items: center;
 }
 
+.confetti {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+    user-select: none;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+ }
+
 header {
     display: flex;
     justify-content: center;
@@ -130,17 +141,6 @@ button a:active {
 button a:visited {
     color: #333;
 }
-
-.confetti {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-
-    user-select: none;
-    z-index: 1;
-    margin: 0;
-    padding: 0;
- }
 
 .gamePlay {
     display: flex;
@@ -357,6 +357,11 @@ footer {
     text-align: center;
 }
 
+footer p, a {
+    position: relative;
+    z-index: 2;
+}
+
 footer a:link {
     color: hsl(187, 97%, 28%);
     text-decoration: none;
@@ -427,6 +432,7 @@ footer p:last-of-type {
     }
 
     button {
+        color: #333;
         width: 300px;
     }
     
