@@ -352,7 +352,7 @@ footer {
     padding: 50px;
     width: 700px;
 
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.5em;
     text-align: center;
 }
@@ -386,6 +386,11 @@ footer p:first-of-type {
 
 footer p:last-of-type {
     padding-top: 15px;
+}
+
+footer img {
+    height: 17px;
+    width: 17px;
 }
 
 @media only screen and (max-width: 425px) {
