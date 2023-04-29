@@ -2,55 +2,66 @@ const rock = document.querySelector('button.rock');
 const paper = document.querySelector('button.paper');
 const scissors = document.querySelector('button.scissors');
 
+rock.onclick = () => getPlayerSelection('rock');
+paper.onclick = () => getPlayerSelection('paper');
+scissors.onclick = () => getPlayerSelection('scissors');
 
-// Functions to get playerSelection of rock, paper, or scissors
+rock.addEventListener('click', textTransition);
+paper.addEventListener('click', textTransition);
+scissors.addEventListener('click', textTransition);
+
 
 let playerSelection = "";
 let computerSelection = "";
-
-rock.addEventListener('click', function() {
-    playerSelection = "rock";
-    console.log("You chose " + playerSelection);
-    return playerSelection;
-});
-
-paper.addEventListener('click', function() {
-    playerSelection = "paper";
-    console.log("You chose " + playerSelection);
-    return playerSelection;
-});
-
-scissors.addEventListener('click', function() {
-    playerSelection = "scissors";
-    console.log("You chose " + playerSelection);
-    return playerSelection;
-});
-    
-
-// Function to play a single round and declare winner of round
-
+let playerScore = 0;
+let computerScore = 0;
 let roundOutcome = "";
+let gameResult = "";
 
 let announce = document.querySelector('div.announcement');
-
 let roundAnnounce = document.createElement('p');
 roundAnnounce.classList.add('announce');
 roundAnnounce.textContent = "Click to begin";
     roundAnnounce.setAttribute('style', 'text-align: center; font-size: 36px');
-
 announce.appendChild(roundAnnounce);
 
+let scores = document.querySelector('div.scores');
+let scoreboard = document.createElement('p');
+scoreboard.classList.add('score');
+scoreboard.textContent = playerScore + ' : ' + computerScore;
+    scoreboard.setAttribute('style', 'text-align: center; font-size: 55px')
+scores.appendChild(scoreboard);
+
+
+function textTransition() {
+    announce.classList.remove('fade');
+    setTimeout(() => {
+        requestAnimationFrame(() => {
+            announce.classList.add('fade');
+        });
+    }, 225);
+}
+
+function getPlayerSelection(newSelection) {
+    playerSelection = newSelection;
+    console.log("You chose " + newSelection);
+
+    playRound();
+}
 
 function playRound() {
+    getComputerSelection();
+    announceRoundOutcome();
+    keepScore();
+}
 
-    function getComputerChoice() {
-        let choiceArray = ["rock", "paper", "scissors"];
-        computerSelection = choiceArray[Math.floor(Math.random() * choiceArray.length)];
-        console.log("Computer chose " + computerSelection);
-        return computerSelection;
-    };
+function getComputerSelection() {
+    let choiceArray = ["rock", "paper", "scissors"];
+    computerSelection = choiceArray[Math.floor(Math.random() * choiceArray.length)];
+    console.log("Computer chose " + computerSelection);
+};
 
-    getComputerChoice();
+function announceRoundOutcome() {
 
     if (playerSelection == "rock" && computerSelection == "paper") {
         roundOutcome = "Oh, no!  Paper beats rock.";
@@ -71,12 +82,78 @@ function playRound() {
     };
 
     roundAnnounce.textContent = roundOutcome;
-    return roundOutcome;    
 }
 
-rock.addEventListener('click', playRound);
-paper.addEventListener('click', playRound);
-scissors.addEventListener('click', playRound);
+function keepScore() {
+    keepPlayerScore();
+    keepComputerScore();
+    announceWinner();
+}
+
+function keepPlayerScore () {
+    if ((playerSelection == "rock" && computerSelection == "scissors") ||       
+        (playerSelection == "paper" && computerSelection == "rock") || 
+        (playerSelection == "scissors" && computerSelection == "paper")) {
+        playerScore += 1;
+        scoreboard.textContent = playerScore + ' : ' + computerScore;
+    } else {
+    scoreboard.textContent = playerScore + ' : ' + computerScore;
+    }
+}
+
+function keepComputerScore() {
+    if ((playerSelection == "paper" && computerSelection == "scissors") ||       
+        (playerSelection == "scissors" && computerSelection == "rock") || 
+        (playerSelection == "rock" && computerSelection == "paper")) {
+        computerScore += 1;
+        scoreboard.textContent = playerScore + ' : ' + computerScore;
+    } else {
+    scoreboard.textContent = playerScore + ' : ' + computerScore;
+    }
+}
+
+function announceWinner() {
+    if (playerScore === 5) {
+        gameResult = "Congrats!  You won the game!";
+        initConfetti();
+        render();
+    } else if (computerScore === 5) {
+        gameResult = "Bummer!  You lost the game.";
+    } else {
+       return;
+    }
+    
+    roundAnnounce.textContent = gameResult;
+    resetGame();
+}
+
+function resetGame() {
+    if (gameResult == "Congrats!  You won the game!" || gameResult == "Bummer!  You lost the game.") {
+        playerScore = 0;
+        computerScore = 0;
+        gameResult = "";
+    }
+    
+    let clickPlayAgain = setTimeout(() => {
+        textTransition();
+        roundAnnounce.textContent = "Click to play again";
+        console.log("Play again!");
+        return roundAnnounce;
+    }, 3000);
+
+    
+    function clearTO() {
+        if(clickPlayAgain) {
+            clearTimeout(clickPlayAgain);
+            return;
+        }
+    }
+
+    rock.addEventListener('click', clearTO);
+    paper.addEventListener('click', clearTO);
+    scissors.addEventListener('click', clearTO);
+
+}
 
 
 // Confetti Canvas
@@ -191,119 +268,3 @@ window.addEventListener('resize', function () {
 //window.addEventListener('click', function () {
 //  initConfetti();
 //});
-
-
-// Functions to keepScore and announceWinner
-
-let playerScore = 0;
-let computerScore = 0;
-
-let scores = document.querySelector('div.scores');
-
-let scoreboard = document.createElement('p');
-scoreboard.classList.add('score');
-scoreboard.textContent = playerScore + ' : ' + computerScore;
-    scoreboard.setAttribute('style', 'text-align: center; font-size: 55px')
-
-scores.appendChild(scoreboard);
-
-let gameResult = "";
-
-function keepScore() {
-    
-    function keepPlayerScore () {
-        if ((playerSelection == "rock" && computerSelection == "scissors") ||       
-            (playerSelection == "paper" && computerSelection == "rock") || 
-            (playerSelection == "scissors" && computerSelection == "paper")) {
-            playerScore += 1;
-            scoreboard.textContent = playerScore + ' : ' + computerScore;
-            return playerScore;
-        } else {
-        scoreboard.textContent = playerScore + ' : ' + computerScore;
-        return playerScore;
-        }
-    };
-
-    keepPlayerScore();
-    
-    function keepComputerScore() {
-        if ((playerSelection == "paper" && computerSelection == "scissors") ||       
-            (playerSelection == "scissors" && computerSelection == "rock") || 
-            (playerSelection == "rock" && computerSelection == "paper")) {
-            computerScore += 1;
-            scoreboard.textContent = playerScore + ' : ' + computerScore;
-            return computerScore;
-        } else {
-        scoreboard.textContent = playerScore + ' : ' + computerScore;
-        return computerScore;
-        }
-    };
-
-    keepComputerScore();
-
-    function announceWinner() {
-        if (playerScore === 5) {
-            gameResult = "Congrats!  You won the game!";
-            initConfetti();
-            render();
-        } else if (computerScore === 5) {
-            gameResult = "Bummer!  You lost the game.";
-        } else {
-           return;
-        }
-        
-        roundAnnounce.textContent = gameResult;
-        return gameResult;
-    };
-
-    announceWinner();
-    resetGame();
-}
-
-rock.addEventListener('click', keepScore);
-paper.addEventListener('click', keepScore);
-scissors.addEventListener('click', keepScore);
-
-// Fade text transition
-
-function textTransition() {
-    announce.classList.remove('fade');
-    setTimeout(() => {
-        requestAnimationFrame(() => {
-            announce.classList.add('fade');
-        });
-    }, 225);
-}
-
-rock.addEventListener('click', textTransition);
-paper.addEventListener('click', textTransition);
-scissors.addEventListener('click', textTransition);
-
-// Function to resetGame() after winner is declared
-
-function resetGame() {
-    if (gameResult == "Congrats!  You won the game!" || gameResult == "Bummer!  You lost the game.") {
-        playerScore = 0;
-        computerScore = 0;
-        gameResult = "";
-
-        let clickPlayAgain = setTimeout(() => {
-            textTransition();
-            roundAnnounce.textContent = "Click to play again";
-            console.log("Play again!");
-            return roundAnnounce;
-        }, 3000);
-
-        
-        function clearTO() {
-            if(clickPlayAgain) {
-                clearTimeout(clickPlayAgain);
-                return;
-            }
-        }
-
-        rock.addEventListener('click', clearTO);
-        paper.addEventListener('click', clearTO);
-        scissors.addEventListener('click', clearTO);
-    }
-};
