@@ -8,10 +8,16 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --lightBackgroundColor: #fcfcfc;
+    --darkBackgroundColor: #e0e1e2;
+    --fontColor: #333;
+}
+
 body {
     font-family: 'Fira Sans Condensed', sans-serif;
-    color: #333;
-    background-color: #fcfcfc;
+    color: var(--fontColor);
+    background-color: var(--lightBackgroundColor);
 
     display: flex;
     flex-direction: column;
@@ -45,7 +51,7 @@ img {
 div.instructions {
     margin: 0 auto;
     width: 100%;
-    background-color: #e0e1e2;
+    background-color: var(--darkBackgroundColor);
 }
 
 section.instructions {
@@ -91,7 +97,7 @@ button {
     font-weight: bold;
     font-size: 22px;
     border-radius: 0.5em;
-    border: 2px solid #333;
+    border: 2px solid var(--fontColor);
 
     background-size: 250% 100%;
     transition: all .4s ease-in-out;
@@ -129,20 +135,20 @@ button:hover {
 }
 
 button a:link {
-    color: #333;
+    color: var(--fontColor);
     text-decoration: none;
 }
 
 button a:hover {
-    color: #333;
+    color: var(--fontColor);
 }
 
 button a:active {
-    color: #333;
+    color: var(--fontColor);
 }
 
 button a:visited {
-    color: #333;
+    color: var(--fontColor);
 }
 
 .gamePlay {
@@ -177,7 +183,7 @@ button a:visited {
     z-index: 1;
     left: 45px;
 
-    border: 2px solid #333;
+    border: 2px solid var(--fontColor);
     border-radius: 0.5em;
     width: 90px;
     padding: 6px 8px;
@@ -205,7 +211,7 @@ button a:visited {
 
 .scores {
     width: 300px;
-    border: 2px solid #333;
+    border: 2px solid var(--fontColor);
     border-radius: 0.5em;
     padding: 15px;
 
@@ -219,7 +225,7 @@ button a:visited {
     z-index: 1;
     right: 45px;
 
-    border: 2px solid #333;
+    border: 2px solid var(--fontColor);
     border-radius: 0.5em;
     width: 90px;
     padding: 6px 8px;
@@ -347,7 +353,7 @@ button a:visited {
 .footer {
     margin: 0 auto;
     width: 100%;
-    background-color: #e0e1e2;
+    background-color: var(--darkBackgroundColor);
 }
 
 footer {
@@ -440,7 +446,7 @@ footer img {
     }
 
     button {
-        color: #333;
+        color: var(--fontColor);
         width: 300px;
     }
     
