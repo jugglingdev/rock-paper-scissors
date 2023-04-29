@@ -20,17 +20,17 @@ let gameResult = "";
 
 let announce = document.querySelector('div.announcement');
 let roundAnnounce = document.createElement('p');
-roundAnnounce.classList.add('announce');
-roundAnnounce.textContent = "Click to begin";
+    roundAnnounce.classList.add('announce');
+    roundAnnounce.textContent = "Click to begin";
     roundAnnounce.setAttribute('style', 'text-align: center; font-size: 36px');
-announce.appendChild(roundAnnounce);
+    announce.appendChild(roundAnnounce);
 
 let scores = document.querySelector('div.scores');
 let scoreboard = document.createElement('p');
-scoreboard.classList.add('score');
-scoreboard.textContent = playerScore + ' : ' + computerScore;
+    scoreboard.classList.add('score');
+    scoreboard.textContent = playerScore + ' : ' + computerScore;
     scoreboard.setAttribute('style', 'text-align: center; font-size: 55px')
-scores.appendChild(scoreboard);
+    scores.appendChild(scoreboard);
 
 
 function textTransition() {
@@ -45,7 +45,6 @@ function textTransition() {
 function getPlayerSelection(newSelection) {
     playerSelection = newSelection;
     console.log("You chose " + newSelection);
-
     playRound();
 }
 
@@ -138,14 +137,12 @@ function resetGame() {
         textTransition();
         roundAnnounce.textContent = "Click to play again";
         console.log("Play again!");
-        return roundAnnounce;
     }, 3000);
 
     
     function clearTO() {
         if(clickPlayAgain) {
             clearTimeout(clickPlayAgain);
-            return;
         }
     }
 
